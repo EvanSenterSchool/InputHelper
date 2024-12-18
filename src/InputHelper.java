@@ -135,6 +135,27 @@ public class InputHelper {
         } while (!done);
         return num;
     }
+    public static Boolean getYNConfirm(Scanner scan, String prompt) {
+        String input;
+        boolean yesNo = false;
+        boolean complete = false;
+
+        System.out.println(prompt);
+        do {
+            input = scan.nextLine();
+            if (input.equalsIgnoreCase("y")) {
+                yesNo = true;
+                complete = true;
+            } else if (input.equalsIgnoreCase("n")) {
+                yesNo = false;
+                complete = true;
+
+            } else {
+                System.out.println("Error please enter only Y or N");
+            }
+        } while (!complete);
+        return yesNo;
+    }
     
 
 }
